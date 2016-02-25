@@ -47,6 +47,7 @@ require_once __DIR__ . '/views/php.php';
 require_once __DIR__ . '/views/wordpress.php';
 require_once __DIR__ . '/views/theme.php';
 require_once __DIR__ . '/views/plugins.php';
+require_once __DIR__ . '/views/database.php';
 
 // This plugin is only usable via WP_CLI
 if ( defined( 'WP_CLI' ) && WP_CLI ) {

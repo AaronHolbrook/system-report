@@ -50,6 +50,7 @@ function generate_system_report_page() {
 
 		<?php echo get_plugins_report(); ?>
 
+		<?php echo get_database_report(); ?>
 	</div>
 
 	<?php
