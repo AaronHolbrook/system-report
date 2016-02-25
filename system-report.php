@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * This plugin is restricted to only the highest echelons
  */
-if ( ! is_admin() ) {
+if ( ! is_admin() && ( defined( 'WP_CLI' ) && ! WP_CLI ) ) {
 	return;
 }
 
