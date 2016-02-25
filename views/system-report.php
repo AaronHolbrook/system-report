@@ -11,7 +11,7 @@ namespace AJH\System_Report;
  *
  * @return bool|mixed|string
  */
-function get_system_report_page( $force = true ) {
+function get_system_report_page( $force = false ) {
 	$cache_key = 'ajh-system-report-page';
 
 	$report_page_output = wp_cache_get( $cache_key );
