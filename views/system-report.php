@@ -16,7 +16,7 @@ function get_system_report_page( $force = false ) {
 
 	$report_page_output = wp_cache_get( $cache_key );
 
-	if ( true === $force ) {
+	if ( false === $report_page_output || true === $force ) {
 
 		$report_page_output = generate_system_report_page();
 
