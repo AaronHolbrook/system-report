@@ -2,7 +2,7 @@
 /**
  * Plugin Name: System Report
  * Description: Quickly identify important aspects of your server, PHP, WordPress installation, theme, plugins and database.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Aaron Holbrook
  * Author URI:  http://aaronjholbrook.com
  */
