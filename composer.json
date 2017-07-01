@@ -1,0 +1,10 @@
+{
+	"name": "aaronholbrook/system-report",
+	"description": "Quickly identify important aspects of your server, PHP, WordPress installation, theme, plugins and database.",
+	"type": "wordpress-plugin",
+	"autoload": {
+		"files": [
+			"system-report.php"
+		]
+	}
+}

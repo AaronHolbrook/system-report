@@ -2,13 +2,13 @@
 /**
  * Plugin Name: System Report
  * Description: Quickly identify important aspects of your server, PHP, WordPress installation, theme, plugins and database.
- * Version:     1.0.2
+ * Version:     2.0.0
  * Author:      Aaron Holbrook
  * Author URI:  http://aaronjholbrook.com
  */
 
 /**
- * Copyright (c) 2016 Aaron Holbrook (email : aaron@holbrook.io)
+ * Copyright (c) 2017 Aaron Holbrook (email : tyrun@fastmail.com)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2 or, at
