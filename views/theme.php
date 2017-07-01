@@ -15,15 +15,18 @@ function get_theme_report() {
 	<h2 class="title">Theme</h2>
 	<p>Information on the current active theme.</p>
 
-<pre>
-	<?php echo esc_html( str_pad( 'Name:', 20 ) ); ?> <code><?php echo esc_html( $theme->get( 'Name' ) ); ?></code>
-	<?php echo esc_html( str_pad( 'Author:', 20 ) ); ?> <code><?php echo esc_html( $theme->get( 'Author' ) ); ?></code>
-	<?php echo esc_html( str_pad( 'Author URI:', 20 ) ); ?> <code><?php echo esc_html( $theme->get( 'AuthorURI' ) ); ?></code>
-	<?php echo esc_html( str_pad( 'Version:', 20 ) ); ?> <code><?php echo esc_html( $theme->get( 'Version' ) ); ?></code>
-	<?php echo esc_html( str_pad( 'Theme Root:', 20 ) ); ?> <code><?php echo esc_html( $theme->theme_root ); ?></code>
-	<?php echo esc_html( str_pad( 'Template:', 20 ) ); ?> <code><?php echo esc_html( $theme->get( 'Template' ) ); ?></code>
-</pre>
 	<?php
+	$items = [
+		'Name'       => $theme->get( 'Name' ),
+		'Author'     => $theme->get( 'Author' ),
+		'Author URI' => $theme->get( 'AuthorURI' ),
+		'Version'    => $theme->get( 'Version' ),
+		'Theme Root' => $theme->theme_root,
+		'Template'   => $theme->get( 'Template' ),
+	];
+
+	echo get_sys_report_list_table( $items );
+
 	$output = ob_get_clean();
 
 	return $output;

@@ -12,16 +12,19 @@ function get_server_report() {
 	?>
 
 	<h2 class="title">Server</h2>
+
 	<p>This shows a high level breakdown of what your server looks like.</p>
 
-<pre>
-	<?php echo esc_html( str_pad( 'Software:', 20 ) ); ?> <code><?php echo esc_html( $_SERVER['SERVER_SOFTWARE'] ); ?></code>
-	<?php echo esc_html( str_pad( 'Name:', 20 ) ); ?> <code><?php echo esc_html( $_SERVER['SERVER_NAME'] ); ?></code>
-	<?php echo esc_html( str_pad( 'Address:', 20 ) ); ?> <code><?php echo esc_html( $_SERVER['SERVER_ADDR'] ); ?></code>
-	<?php echo esc_html( str_pad( 'Port:', 20 ) ); ?> <code><?php echo esc_html( $_SERVER['SERVER_PORT'] ); ?></code>
-</pre>
-
 	<?php
+	$items = [
+		'Software' => $_SERVER['SERVER_SOFTWARE'],
+		'Name'     => $_SERVER['SERVER_NAME'],
+		'Address'  => $_SERVER['SERVER_ADDR'],
+		'Port'     => $_SERVER['SERVER_PORT'],
+	];
+
+	echo get_sys_report_list_table( $items );
+
 	$output = ob_get_clean();
 
 	return $output;

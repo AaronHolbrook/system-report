@@ -17,18 +17,18 @@ function get_plugins_report() {
 	<h2 class="title">Plugins</h2>
 	<p>Report of your WordPress installation.</p>
 
-<pre>
 	<?php
+	$items = [];
 	foreach ( $plugins as $plugin_file => $plugin ) {
-		printf( "%s <code>%s</code> <code>%s</code>\r\n\t",
-			str_pad( esc_html( $plugin['Title'] ), 35 ),
-			str_pad( is_plugin_active( $plugin_file ) ? 'Active' : 'Inactive', 8 ),
-			esc_html( $plugin['Version'] )
+		$value = sprintf( "[%s] - %s",
+			is_plugin_active( $plugin_file ) ? 'Active' : 'Inactive',
+			$plugin['Version']
 		);
-	} ?>
-</pre>
+		$items[ $plugin['Title'] ] = $value;
+	}
 
-	<?php
+	echo get_sys_report_list_table( $items );
+
 	$output = ob_get_clean();
 
 	return $output;

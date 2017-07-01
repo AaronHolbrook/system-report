@@ -41,6 +41,8 @@ if ( ! is_admin() && ( defined( 'WP_CLI' ) && ! WP_CLI ) ) {
 /**
  * File includes
  */
+require_once __DIR__ . '/src/class-system-report-table.php';
+require_once __DIR__ . '/src/get-sys-report-list-table.php';
 require_once __DIR__ . '/views/system-report.php';
 require_once __DIR__ . '/views/server.php';
 require_once __DIR__ . '/views/php.php';
@@ -57,7 +59,7 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
 /**
  * Adds our System Report page to the Tools Menu
  */
-add_action( 'admin_menu', function() {
+add_action( 'admin_menu', function () {
 
 	add_submenu_page(
 		'tools.php',
@@ -76,5 +78,21 @@ add_action( 'admin_menu', function() {
  */
 function system_report_page() {
 
-	echo get_system_report_page();
+	?>
+	<div class="wrap">
+		<style>
+			table.wp-list-table #setting {
+				width: 30%;
+			}
+		</style>
+		<h1>System Report</h1>
+
+		<p>
+			This system report stands to assist you in quickly identifying all aspects of your WordPress, plugin, server and database information at a glance.
+		</p>
+		<?php
+		echo get_system_report_page();
+		?>
+	</div>
+	<?php
 }

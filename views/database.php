@@ -10,10 +10,10 @@ namespace AJH\System_Report;
 function get_database_report() {
 	global $wpdb;
 
-	$tables = get_table_count();
-	$rows = get_row_count();
+	$tables  = get_table_count();
+	$rows    = get_row_count();
 	$options = get_option_count();
-	$posts = get_post_count();
+	$posts   = get_post_count();
 
 	ob_start();
 	?>
@@ -21,16 +21,18 @@ function get_database_report() {
 	<h2 class="title">Database</h2>
 	<p>This shows some basic information about your database.</p>
 
-<pre>
-	<?php echo esc_html( str_pad( 'Version:', 20 ) ); ?> <code><?php echo esc_html( $wpdb->db_version() ); ?></code>
-	<?php echo esc_html( str_pad( 'Base Prefix:', 20 ) ); ?> <code><?php echo esc_html( $wpdb->base_prefix ); ?></code>
-	<?php echo esc_html( str_pad( 'Table Count:', 20 ) ); ?> <code><?php echo esc_html( $tables ); ?></code>
-	<?php echo esc_html( str_pad( 'Row Count:', 20 ) ); ?> <code><?php echo esc_html( $rows ); ?>k</code>
-	<?php echo esc_html( str_pad( 'Option Count:', 20 ) ); ?> <code><?php echo esc_html( $options ); ?></code>
-	<?php echo esc_html( str_pad( 'Post Count:', 20 ) ); ?> <code><?php echo esc_html( $posts ); ?></code>
-</pre>
-
 	<?php
+	$items = [
+		'Version'      => $wpdb->db_version(),
+		'Base Prefix'  => $wpdb->base_prefix,
+		'Table Count'  => $tables,
+		'Row Count'    => $rows . 'k',
+		'Option Count' => $options,
+		'Post Count'   => $posts,
+	];
+
+	echo get_sys_report_list_table( $items );
+
 	$output = ob_get_clean();
 
 	return $output;

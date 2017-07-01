@@ -34,26 +34,19 @@ function get_system_report_page( $force = false ) {
 function generate_system_report_page() {
 
 	ob_start();
-	?>
-	<div class="wrap">
-		<h1>System Report</h1>
 
-		<p>This system report stands to assist you in quickly identifying all aspects of your WordPress, plugin, server and database information at a glance.</p>
+	echo get_server_report();
 
-		<?php echo get_server_report(); ?>
+	echo get_php_report();
 
-		<?php echo get_php_report(); ?>
+	echo get_wordpress_report();
 
-		<?php echo get_wordpress_report(); ?>
+	echo get_theme_report();
 
-		<?php echo get_theme_report(); ?>
+	echo get_plugins_report();
 
-		<?php echo get_plugins_report(); ?>
+	echo get_database_report();
 
-		<?php echo get_database_report(); ?>
-	</div>
-
-	<?php
 	$output = ob_get_clean();
 
 	return $output;
