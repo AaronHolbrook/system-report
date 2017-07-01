@@ -17,10 +17,15 @@ function get_server_report() {
 
 	<?php
 	$items = [
-		'Software' => $_SERVER['SERVER_SOFTWARE'],
-		'Name'     => $_SERVER['SERVER_NAME'],
-		'Address'  => $_SERVER['SERVER_ADDR'],
-		'Port'     => $_SERVER['SERVER_PORT'],
+		'Software'          => $_SERVER['SERVER_SOFTWARE'],
+		'Name'              => $_SERVER['SERVER_NAME'],
+		'Address'           => $_SERVER['SERVER_ADDR'],
+		'Port'              => $_SERVER['SERVER_PORT'],
+		'Ini Dir'           => $_SERVER['PHP_INI_DIR'],
+		'User'              => $_SERVER['USER'],
+		'Peak Memory Usage' => memory_get_peak_usage(),
+		'Temp Dir'          => sys_get_temp_dir(),
+		'System Load'       => number_format( getServerLoad(), 4 ) . '%',
 	];
 
 	echo get_sys_report_list_table( $items );

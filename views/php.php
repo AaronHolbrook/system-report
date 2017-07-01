@@ -23,6 +23,7 @@ function get_php_report() {
 		'Error Log'          => ini_get( 'error_log' ),
 		'Max Execution Time' => ini_get( 'max_execution_time' ),
 		'Memory Limit'       => ini_get( 'memory_limit' ),
+		'Loaded Extensions'  => implode( ', ', get_loaded_extensions() ),
 	];
 
 	echo get_sys_report_list_table( $items );

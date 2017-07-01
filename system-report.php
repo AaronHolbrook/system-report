@@ -43,6 +43,7 @@ if ( ! is_admin() && ( defined( 'WP_CLI' ) && ! WP_CLI ) ) {
  */
 require_once __DIR__ . '/src/class-system-report-table.php';
 require_once __DIR__ . '/src/get-sys-report-list-table.php';
+require_once __DIR__ . '/src/system-load.php';
 require_once __DIR__ . '/views/system-report.php';
 require_once __DIR__ . '/views/server.php';
 require_once __DIR__ . '/views/php.php';

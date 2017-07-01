@@ -18,6 +18,7 @@ function get_wordpress_report() {
 	<?php
 	$items = [
 		'Version'        => get_bloginfo( 'version' ),
+		'ABSPATH'        => ABSPATH,
 		'Admin Email'    => get_bloginfo( 'admin_email' ),
 		'Language'       => get_bloginfo( 'language' ),
 		'Stylesheet Dir' => get_bloginfo( 'stylesheet_directory' ),

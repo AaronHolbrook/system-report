@@ -23,12 +23,15 @@ function get_database_report() {
 
 	<?php
 	$items = [
-		'Version'      => $wpdb->db_version(),
-		'Base Prefix'  => $wpdb->base_prefix,
-		'Table Count'  => $tables,
-		'Row Count'    => $rows . 'k',
-		'Option Count' => $options,
-		'Post Count'   => $posts,
+		'Version'       => $wpdb->db_version(),
+		'Base Prefix'   => $wpdb->base_prefix,
+		'Table Count'   => $tables,
+		'Row Count'     => $rows . 'k',
+		'Option Count'  => $options,
+		'Post Count'    => $posts,
+		'Database Host' => $wpdb->dbhost,
+		'Database Name' => $wpdb->dbname,
+		'Tables'        => implode( ', ', $wpdb->tables ),
 	];
 
 	echo get_sys_report_list_table( $items );
