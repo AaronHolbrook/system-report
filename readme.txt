@@ -3,7 +3,7 @@ Contributors: aaronholbrook
 Tags: system, report, information, status
 Requires at least: 3.3
 Tested up to: 4.8
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,12 @@ The report is located under Tools -> System Report
 1. Show essential information from all systems in your stack
 
 == Changelog ==
+
+= 2.1 =
+* Added more information and data gathering
+
+= 2.0 =
+* Implemented much more readable and elegant WP List Table layout for each section
 
 = 1.0 =
 * Initial release
